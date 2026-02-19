@@ -7,9 +7,10 @@ use App\Models\Item;
 
 class ItemController extends Controller
 {
-    // TASK: generate that StoreItemRequest class
-    //   with authorization returning TRUE
-    //   and validation rules: name is required, and description is required
+    // TÂCHE : générez la classe StoreItemRequest avec la commande artisan
+    //   `php artisan make:request StoreItemRequest`
+    //   La méthode authorize() doit retourner true
+    //   Les règles de validation : name est obligatoire (required), description est obligatoire (required)
     public function store(StoreItemRequest $request)
     {
         Item::create($request->validated());

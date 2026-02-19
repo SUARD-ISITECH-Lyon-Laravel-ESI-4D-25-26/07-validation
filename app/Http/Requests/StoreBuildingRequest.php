@@ -4,13 +4,14 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-// TASK: Customize the validation error message to say "Please enter the name"
+// TÂCHE : personnalisez le message d'erreur de validation pour que le champ "name"
+//         affiche "Please enter the name" à la place du message par défaut
 class StoreBuildingRequest extends FormRequest
 {
     protected $redirectRoute = 'buildings.create';
 
     /**
-     * Determine if the user is authorized to make this request.
+     * Vérifie si l'utilisateur est autorisé à effectuer cette requête.
      *
      * @return bool
      */
@@ -20,7 +21,7 @@ class StoreBuildingRequest extends FormRequest
     }
 
     /**
-     * Get the validation rules that apply to the request.
+     * Retourne les règles de validation applicables à cette requête.
      *
      * @return array
      */

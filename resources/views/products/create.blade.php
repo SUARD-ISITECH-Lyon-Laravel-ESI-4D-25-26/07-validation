@@ -4,8 +4,8 @@
     <br />
     <input type="text" name="name" />
     <br />
-    {{-- TASK: show the validation error for the specific "name" field --}}
-    {{-- using one Blade directive: pseudo-code below --}}
+    {{-- TÂCHE : affichez l'erreur de validation spécifique au champ "name" --}}
+    {{-- en utilisant une seule directive Blade : pseudo-code ci-dessous --}}
     {{-- @directive --}}
     {{-- {{ $message }} --}}
     {{-- @endDirective --}}

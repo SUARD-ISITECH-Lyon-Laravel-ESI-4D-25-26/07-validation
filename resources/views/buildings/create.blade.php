@@ -4,7 +4,7 @@
     <br />
     <input type="text" name="name" />
     <br />
-    {{-- TASK: Customize the validation error message to say "Please enter the name" --}}
+    {{-- TÂCHE : personnalisez le message d'erreur de validation pour afficher "Please enter the name" --}}
     @error('name') {{ $message }} @enderror
     <br /><br />
     <button type="submit">Save</button>

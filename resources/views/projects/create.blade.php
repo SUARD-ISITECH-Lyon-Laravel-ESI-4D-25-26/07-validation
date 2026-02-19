@@ -1,8 +1,8 @@
-{{-- Form without any design --}}
+{{-- Formulaire sans design --}}
 
-{{-- TASK: add the validation errors here - with whatever HTML structure you want --}}
-{{-- in case of title/description empty, visitor should see --}}
-{{-- "The name field is required." and "The description field is required." --}}
+{{-- TÂCHE : affichez ici les erreurs de validation avec la structure HTML de votre choix --}}
+{{-- Si name ou description est vide, le visiteur devrait voir : --}}
+{{-- "The name field is required." et "The description field is required." --}}
 
 <form method="POST" action="{{ route('projects.store') }}">
     @csrf

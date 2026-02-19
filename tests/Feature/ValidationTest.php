@@ -12,15 +12,15 @@ class ValidationTest extends TestCase
 
     public function test_simple_validation_rules()
     {
-        // Post without any title should fail because title is required
+        // Un post sans titre devrait échouer car le champ title est requis (required)
         $response = $this->post('posts');
         $response->assertSessionHasErrors('title')->assertStatus(302);
 
-        // Post with title should succeed
+        // Un post avec un titre devrait réussir
         $response = $this->post('posts', ['title' => 'Some title']);
         $response->assertStatus(200);
 
-        // Post with the same title should fail because it's not unique
+        // Un post avec le même titre devrait échouer car le titre n'est pas unique (unique)
         $response = $this->post('posts', ['title' => 'Some title']);
         $response->assertSessionHasErrors('title')->assertStatus(302);
     }
@@ -29,11 +29,11 @@ class ValidationTest extends TestCase
     {
         $user = User::factory()->create();
 
-        // Post without name and email should fail
+        // Un post sans name ni email devrait échouer
         $response = $this->actingAs($user)->post('profile');
         $response->assertStatus(302);
 
-        // Post with name and email should succeed
+        // Un post avec name et email devrait réussir
         $response = $this->actingAs($user)->post('profile', [
             'profile' => [
                 'name' => 'Some name',
@@ -67,11 +67,11 @@ class ValidationTest extends TestCase
 
     public function test_form_request_validation()
     {
-        // Post with no name/description should fail
+        // Un post sans name/description devrait échouer
         $response = $this->post('items');
         $response->assertStatus(302);
 
-        // Post with all the fields should succeed
+        // Un post avec tous les champs devrait réussir
         $response = $this->post('items', [
             'name' => 'Abc',
             'description' => 'Xyz',
@@ -83,7 +83,7 @@ class ValidationTest extends TestCase
     {
         $user = User::factory()->create();
 
-        // field is_admin should not be possible to update
+        // Le champ is_admin ne doit pas pouvoir être modifié
         $updatedUser = [
             'name' => 'Updated name',
             'email' => 'updated@email.com',

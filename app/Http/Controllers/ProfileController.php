@@ -9,10 +9,11 @@ class ProfileController extends Controller
     public function update(Request $request)
     {
         $request->validate([
-            // TASK: imagine that in the Blade the fields are
+            // TÂCHE : imaginez que le formulaire Blade contient des champs de type tableau :
             // <input name="profile[name]" ... />
             // <input name="profile[email]" ... />
-            // Write validation rules, so both name and email are required
+            // Écrivez les règles de validation pour que name et email soient tous les deux obligatoires (required)
+            // Votre code ici
         ]);
 
         auth()->user()->update($request->profile ?? []);

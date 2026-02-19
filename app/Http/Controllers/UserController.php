@@ -9,8 +9,9 @@ class UserController extends Controller
 {
     public function update(User $user, UpdateUserRequest $request)
     {
-        // TASK: change this line to not allow is_admin field to be updated
-        // Update only the fields that are validated in UpdateUserRequest
+        // TÂCHE : modifiez cette ligne pour empêcher la mise à jour du champ is_admin
+        // Utilisez uniquement les champs validés par UpdateUserRequest (sans is_admin)
+        // Indice : utilisez $request->validated() plutôt que $request->all()
         $user->update($request->all());
 
         return 'Success';
